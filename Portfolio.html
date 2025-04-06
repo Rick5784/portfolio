@@ -1,175 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arkodeep Mukhopadhyay | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1e1e2e, #3a1c71, #ff0099);
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
-        header {
-            background: linear-gradient(90deg, #ff00ff, #8000ff);
-            padding: 20px 50px;
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #1e1e2e, #3a1c71, #ff0099);
+        color: #e0e0e0;
+        overflow-x: hidden;
+      }
+      header {
+        background: linear-gradient(90deg, #ff00ff, #8000ff);
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        animation: fadeInDown 1s ease-in-out;
+      }
+      header h1 {
+        font-size: 24px;
+        margin: 0;
+        color: #ffffff;
+      }
+      header h1 span {
+        display: block;
+        font-size: 16px;
+        color: #ffcc00;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+      }
+      nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+      .project-card {
+            background-color: #1e293b;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 100%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeInDown 1s ease-in-out;
+            flex-direction: column;
+    }
+      nav ul li a:hover {
+        color: #ffcc00;
+      }
+      section {
+        padding: 60px 80px;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-        header h1 {
-            font-size: 24px;
-            margin: 0;
-            color: #ffffff;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        header h1 span {
-            display: block;
-            font-size: 16px;
-            color: #ffcc00;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        nav ul li a {
-            color: #ffffff;
+      }
+      .project-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding-top: 20px;
+      }
+      .project {
+        background: rgba(48, 54, 61, 0.9);
+        
+        border-radius: 12px;
+        transition: transform 0.3s, background 0.3s;
+        text-align: left;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      .project:hover {
+        background: rgba(255, 0, 255, 0.7);
+        transform: scale(1.05);
+      }
+      footer {
+        background: linear-gradient(90deg, #8000ff, #ff00ff);
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+      .social-links a {
+        color: #ffcc00;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .social-links a:hover {
+        color: #ffffff;
+      }
+      .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .about-container img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 4px solid #ff00ff;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      .project-content{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .project-title,.project-description {
+        display: flex;
+        justify-content: center;
+      }
+      .project-tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+      .project-link {
+            color: #e2e8f0;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-        section {
-            padding: 60px 80px;
-            text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .project-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding-top: 20px;
-        }
-        .project {
-            background: rgba(48, 54, 61, 0.9);
-            padding: 20px;
-            border-radius: 12px;
-            transition: transform 0.3s, background 0.3s;
-            text-align: left;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .project:hover {
-            background: rgba(255, 0, 255, 0.7);
-            transform: scale(1.05);
-        }
-        footer {
-            background: linear-gradient(90deg, #8000ff, #ff00ff);
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        .social-links a {
-            color: #ffcc00;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .social-links a:hover {
-            color: #ffffff;
-        }
-        .about-container {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 0.25rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
-        .about-container img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 4px solid #ff00ff;
-            animation: fadeIn 1.5s ease-in-out;
+        
+        .project-link:hover {
+            color: #38bdf8;
         }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Arkodeep Mukhopadhyay <span>Aspiring Developer</span></h1>
-        <nav>
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <h1>Arkodeep Mukhopadhyay <span>Aspiring Developer</span></h1>
+      <nav>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
-    
+
     <section>
-        <h2>"Technology is best when it brings people together." - Matt Mullenweg</h2>
-        <p>Hi there! I'm thrilled to have you here. My name is Arkodeep Mukhopadhyay, and I love bringing ideas to life through code. Dive in and explore my work as I craft innovative and visually stunning web experiences.</p>
-        <div>
-            <button onclick="location.href='#projects'" style="margin: 10px; padding: 10px 20px; font-size: 16px; background-color: #ff00ff; color: white; border: none; border-radius: 5px; cursor: pointer;">View Projects</button>
-            <button onclick="location.href='#contact'" style="margin: 10px; padding: 10px 20px; font-size: 16px; background-color: #00ccff; color: black; border: none; border-radius: 5px; cursor: pointer;">Get in Touch</button>
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h2>Showcased Projects</h2>
-        <div class="project-container">
-            <div class="project"><h3>Project 1</h3><p>Description of the project.</p></div>
-            <div class="project"><h3>Project 2</h3><p>Description of the project.</p></div>
-            <div class="project"><h3>Project 3</h3><p>Description of the project.</p></div>
-            <div class="project"><h3>Project 4</h3><p>Description of the project.</p></div>
-            <div class="project"><h3>Project 5</h3><p>Description of the project.</p></div>
-            <div class="project"><h3>Project 6</h3><p>Description of the project.</p></div>
-        </div>
-    </section>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <img src="/me.png" alt="Arkodeep Mukhopadhyay">
-            <p>I am an aspiring developer with a passion for building innovative web experiences. My journey in technology started with a fascination for coding, which soon turned into a deep interest in creating efficient and visually appealing applications.</p>
-            <p>I have experience in various programming languages, including <strong>JavaScript, Python, C++, and Java</strong>. I enjoy problem-solving and continuously learning new technologies to expand my skill set.</p>
-            <p>Apart from coding, I have a deep love for music, photography, and gaming. These hobbies inspire me to bring creativity into my projects and think outside the box.</p>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out for collaborations or just a chat!</p>
-        <div class="social-links">
-            <a href="mailto:arkodeeprick@gmail.com">Email Me</a> |
-            <a href="https://www.linkedin.com/in/arkodeep-mukhopadhyay-a85911278/" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/Rick5784" target="_blank">GitHub</a> |
-            <a href="https://www.instagram.com/rick4578_/" target="_blank">Instagram</a>
-        </div>
+      <h2>
+        "Technology is best when it brings people together." - Matt Mullenweg
+      </h2>
+      <p>
+        Hi there! I'm thrilled to have you here. My name is Arkodeep
+        Mukhopadhyay, and I love bringing ideas to life through code. Dive in
+        and explore my work as I craft innovative and visually stunning web
+        experiences.
+      </p>
+      <div>
+        <button
+          onclick="location.href='#projects'"
+          style="
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          View Projects
+        </button>
+        <button
+          onclick="location.href='#contact'"
+          style="
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00ccff;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Get in Touch
+        </button>
+      </div>
     </section>
 
-    
+    <section id="projects">
+      <h2>Showcased Projects</h2>
+      <div class="project-container">
+        <div class="project-card project">
+            <div class="project-image"> <img src="/recipeFinder.png" alt="Reflex Tester Game Screenshot" width="440" height="300"></div>
+            <div class="project-content">
+                <h3 class="project-title">Recipe Finder</h3>
+                <p class="project-description">Recipe Finder is a sleek and responsive web app that lets users search for recipes by ingredients or keywords. It fetches real-time data from a recipe API and displays beautifully styled recipe cards with images, ingredients, and cooking instructions.</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">Javascript</span>
+                </div>
+                <br>
+                <div class="project-links">
+                     <a href="https://github.com/Rick5784/RecipeFinder" class="project-link">Github</a>   
+                    <a href="https://recipe-finder-black-rho.vercel.app/" class="project-link">Live Demo</a>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card project">
+            <div class="project-image"> <img src="/Weather.png" alt="" width="440" height="300"></div>
+            <div class="project-content">
+                <h3 class="project-title">Weather Now</h3>
+                <p class="project-description">A clean and modern weather app inspired by Google's UI. It shows real-time weather data, forecasts, air quality, UV index, weather maps, and supports dark/light themes. It auto-detects location and allows users to favorite cities.</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">Javascript</span>
+                </div>
+                <br>
+                <div class="project-links">
+                     <a href="https://github.com/Rick5784/Weather" class="project-link">Github</a>   
+                    <a href="https://weather-sable-pi-70.vercel.app/" class="project-link">Live Demo</a>                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card project">
+            <div class="project-image"> <img src="/Typassin.png" alt="" width="440" height="300"></div>
+            <div class="project-content">
+                <h3 class="project-title">Typassin</h3>
+                <p class="project-description">Typassin is a futuristic typing speed game with a glowing neon interface. It tracks WPM, accuracy, and errors in real time, features countdowns, difficulty levels, leaderboards, Google login, sound effects, and a fully responsive design.</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">Javascript</span>
+                </div>
+                <br>
+                <div class="project-links">
+                     <a href="https://github.com/Rick5784/Typassin" class="project-link">Github</a>   
+                    <a href="https://typassin.vercel.app/" class="project-link">Live Demo</a>                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card project">
+            <div class="project-image"> <img src="/QuizMaster.png" alt="Reflex Tester Game Screenshot" width="440" height="300"></div>
+            <div class="project-content">
+                <h3 class="project-title">Quiz Master</h3>
+                <p class="project-description">Quiz Master is an interactive quiz app featuring multiple categories, timers, scores, and difficulty levels. It offers instant feedback, progress tracking, and a clean, gamified interface perfect for casual learning.</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">Javascript</span>
+                </div>
+                <br>
+                <div class="project-links">
+                     <a href="https://github.com/Rick5784/quizmaster" class="project-link">Github</a>   
+                    <a href="https://quizmaster-kohl.vercel.app/" class="project-link">Live Demo</a>                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card project">
+            <div class="project-image"> <img src="/JustDoIT.png" alt="Reflex Tester Game Screenshot" width="440" height="300"></div>
+            <div class="project-content">
+                <h3 class="project-title">Just Do IT</h3>
+                <p class="project-description">JustDoIT is a stylish task manager with a focus on productivity. It supports task creation, deadlines, categories, priority tagging, and theme customization with smooth animations and a responsive UI.</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">Javascript</span>
+                </div>
+                <br>
+                <div class="project-links">
+                     <a href="https://github.com/Rick5784/JustDoIT" class="project-link">Github</a>   
+                    <a href="https://just-do-it-mu.vercel.app/" class="project-link">Live Demo</a>                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card project">
+            <div class="project-image"> <img src="/animeyo.png" alt="Reflex Tester Game Screenshot" width="440" height="300"></div>
+            <div class="project-content">
+                <h3 class="project-title">Animeyo</h3>
+                <p class="project-description">Animeyo is a stylish anime streaming and tracking web app inspired by Crunchyroll. It features trending anime, search and genre filters, user profiles, watchlists, episode tracking, and streaming previews using public anime APIs.</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">Javascript</span>
+                </div>
+                <br>
+                <div class="project-links">
+                     <a href="https://github.com/Rick5784/Animeyo" class="project-link">Github</a>   
+                    <a href="https://animeyo-one.vercel.app/" class="project-link">Live Demo</a>                    
+                </div>
+            </div>
+        </div>
+        
+
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="/me.png" alt="Arkodeep Mukhopadhyay" />
+        <p>
+          I am an aspiring developer with a passion for building innovative web
+          experiences. My journey in technology started with a fascination for
+          coding, which soon turned into a deep interest in creating efficient
+          and visually appealing applications.
+        </p>
+        <p>
+          I have experience in various programming languages, including
+          <strong>JavaScript, Python, C++, and Java</strong>. I enjoy
+          problem-solving and continuously learning new technologies to expand
+          my skill set.
+        </p>
+        <p>
+          Apart from coding, I have a deep love for music, photography, and
+          gaming. These hobbies inspire me to bring creativity into my projects
+          and think outside the box.
+        </p>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out for collaborations or just a chat!</p>
+      <div class="social-links">
+        <a href="mailto:arkodeeprick@gmail.com">Email Me</a> |
+        <a
+          href="https://www.linkedin.com/in/arkodeep-mukhopadhyay-a85911278/"
+          target="_blank"
+          >LinkedIn</a
+        >
+        | <a href="https://github.com/Rick5784" target="_blank">GitHub</a> |
+        <a href="https://www.instagram.com/rick4578_/" target="_blank"
+          >Instagram</a
+        >
+      </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Arkodeep Mukhopadhyay. All rights reserved.</p>
+      <p>&copy; 2025 Arkodeep Mukhopadhyay. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
